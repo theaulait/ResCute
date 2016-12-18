@@ -24,8 +24,6 @@ class PetsController < ApplicationController
     @user_id1 = nil
   end
   def index
-# @test = File.read('/Users/student_02/Desktop/GA_Assign/rescute/app/controllers/apidata.json')
-
 @AvaiblePets
   end
   def show
