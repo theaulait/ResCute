@@ -3,4 +3,4 @@
 Hi! <%= @user.first_name%> <br>
 <%= @user.email%>
 
-<p>Update Account <%= link_to "Update Account", update_path %></p>
+<li>Update Account <%= link_to "Update Account", edit_user_path(current_user)%></li>

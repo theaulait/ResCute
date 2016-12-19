@@ -5,11 +5,26 @@ module SessionsHelper
     session[:id] = user.id
   end
 
-  def current_user
-    @current_user ||= User.find_by(id: session[:id])
-  end
-
   def logged_in?
     !current_user.nil?
+  end
+
+  def remember(user)
+    user.remember
+    cookies.permanent.signed[:id] = user.id
+    cookies.permanent[:remember_token] = user.remember_token
+  end
+
+
+  def current_user
+    if (user_id = session[:id])
+      @current_user ||= User.find_by(id: user_id)
+    elsif (user_id = cookies.signed[:id])
+      @user = User.find_by(id: user_id)
+      if @user && user.authenticated?(cookies[:remember_token])
+        log_in @user
+        @current_user = @user
+      end
+    end
   end
 end
