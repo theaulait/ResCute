@@ -14,12 +14,18 @@
 <div class="container">
 <%= @video.description %>
 <%= @video.thumbnail_url%>
-
+	<form class= "vidForm">
+		<input id = "vidSearch" >
+		<button id = "search">Search</button>
+	</form>
+<!--
 <%= form_tag @vidSearch_video_path do %>
 
   <%= text_field_tag :vidSearch  %>
   <%= submit_tag "get vid" %>
 <% end %>
+ -->
+
 </div>
 
 
