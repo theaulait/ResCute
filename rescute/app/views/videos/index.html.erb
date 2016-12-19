@@ -11,17 +11,17 @@
 
 <div id="player"></div>
 
-<!-- <div class="container">
+<div class="container">
 <%= @video.description %>
 <%= @video.thumbnail_url%>
 
-	<form action='/videos' method='youtube.search.list'>
-	<h2>Pet Care Videos:</h2>
-	<label>Search</label><br>
-		<input name='<%@url%>'><br>
+<%= form_tag @vidSearch_video_path do %>
 
-	</form>
-</div> -->
+  <%= text_field_tag :vidSearch  %>
+  <%= submit_tag "get vid" %>
+<% end %>
+</div>
+
 
 
 </body>

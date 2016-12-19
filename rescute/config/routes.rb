@@ -5,6 +5,12 @@ resources :stores, only: [:index, :show, :create]
 resources :pets, only: [:index, :show, :create]
 root to: "pets#index"
 # root to: "pets#index"
-resources :videos
+#resources :videos
+
+resources :videos do
+    post :vidSearch, :on => :collection
 root to: "videos#index"
+end
+
+
 end

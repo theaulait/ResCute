@@ -1,7 +1,7 @@
 class StoresController < ApplicationController
     def initialize
     # response = HTTParty.get('apidata.json')
-    @petsStores = JSON.parse(File.read('/Users/student_02/Desktop/GA_Assign/project3/ResCute/rescute/app/controllers/apidata.json') do |f|
+    @petsStores = JSON.parse(File.read('/Users/student_03/Desktop/proj3/ResCute/rescute/app/controllers/apidata.json') do |f|
       f.each_line do |line|
         line
       end
