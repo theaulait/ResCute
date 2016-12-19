@@ -11,7 +11,7 @@
   <%= @dog["id"]%>
 <%= @dog["name"]%><br>
 <img src="<%= @dog["image"]%>"><br>
-<%= form_for :pets, method: "post", url: {action: "create", :controller=>"pets", :id => @dog["id"]} do |f|%>
+<%= form_for :store, method: "post", url: {action: "create", :controller=>"pets", :id => @dog["id"]} do |f|%>
 
 <%=f.submit "adot"%>
 <%end%>
