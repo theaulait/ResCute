@@ -1,6 +1,7 @@
 class PetsController < ApplicationController
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> develop
@@ -49,6 +50,9 @@ def show
 
 >>>>>>> develop
   end
+=======
+
+>>>>>>> 962808fa7e7987ca4baef4f5fc2db5497bdd35ff
 def create
     @id = params[:id]
     puts "im hreeeeeeeeeeeeeeee"
