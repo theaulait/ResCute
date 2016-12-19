@@ -37,6 +37,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    session[:id] = nil
+      redirect_to '/new'
+  end
+
 private
 
   def user_params
