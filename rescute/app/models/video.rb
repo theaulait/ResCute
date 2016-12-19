@@ -24,8 +24,7 @@ def main
   client, youtube = get_service
 
   begin
-    # Call the search.list method to retrieve results matching the specified
-    # query term.
+    # Call the search.list method to retrieve results matching the specified query term.
     search_response = client.execute!(
       :api_method => youtube.search.list,
       :parameters => {
@@ -36,8 +35,8 @@ def main
     )
 
     videos = []
-    channels = []
-    playlists = []
+    # channels = []
+    # playlists = []
 
     search_response.data.items.each do |search_result|
       case search_result.id.kind
