@@ -62,4 +62,11 @@ ActiveRecord::Schema.define(version: 20161219144633) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "videos", force: :cascade do |t|
+    t.string   "name"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end

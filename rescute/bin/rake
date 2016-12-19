@@ -6,4 +6,10 @@ rescue LoadError => e
 end
 require_relative '../config/boot'
 require 'rake'
+require 'rubygems'
+
+require 'google/api_client'
+require 'trollop'
+
+
 Rake.application.run

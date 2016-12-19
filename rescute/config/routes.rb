@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 root to: "stores#index"
 resources :stores, only: [:index, :show, :create]
 resources :pets, only: [:index, :show, :create]
+resources :videos
 resources :users
+
 end
