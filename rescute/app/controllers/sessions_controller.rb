@@ -4,18 +4,21 @@ class SessionsController < ApplicationController
 
   end
 
+
   def create
-    @user = User.find_by(email: params[:session][:email].downcase)
-    if @user && @user.authenticate(params[:session][:password])
-    else
-    # The error message that will be display if the combination is not correct
-    flash[:danger] = 'Sorry, the password/email combination is not valid'
-    # goes to new
-    render 'new'
+    @user = User.find_by(username: params[:session][:username])
+      if @user && @user.authenticate(params[:session][:password])
+        log_in @user
+        redirect_to @user
+      else
+      # The error message that will be display if the combination is not correct
+      flash.now[:danger] = 'Sorry, the user/password combination is not valid'
+      # then goes to new
+      render 'new'
+    end
   end
 
   def destroy
-
   end
 
 end
