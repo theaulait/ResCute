@@ -15,12 +15,13 @@
 <%= @video.description %>
 <%= @video.thumbnail_url%>
 
-<%= form_for "/videos", method: "get" do  %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
+<%= form_tag @vidSearch_video_path do %>
+
+  <%= text_field_tag :vidSearch  %>
+  <%= submit_tag "get vid" %>
 <% end %>
 </div>
+
 
 
 </body>

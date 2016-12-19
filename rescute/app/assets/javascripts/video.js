@@ -43,8 +43,8 @@ function stopVideo() {
 // app.post('/search', function(req, res){
 //   var API = process.env.DEVELOPER_KEY
 //   var search = req.body.search; // user's input
-//   var narrow = encodeURIComponent('pets'); // narrow search
-//   fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&q='+narrow+'%20'+search+'&key='+API)
+//   var filt = encodeURIComponent('pets'); // filter search
+//   fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&q='+filt+'%20'+search+'&key='+API)
 //   .then(function(response){
 //     return response.json();
 //   })

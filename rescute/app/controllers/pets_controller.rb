@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-<<<<<<< HEAD
+
   def initialize
     # response = HTTParty.get('apidata.json')
     @test = JSON.parse(File.read('/Users/student_03/Desktop/proj3/ResCute/rescute/app/controllers/apidata.json') do |f|
@@ -25,17 +25,16 @@ class PetsController < ApplicationController
     @user_id1 = nil
   end
   def index
-# @test = File.read('/Users/student_02/Desktop/GA_Assign/rescute/app/controllers/apidata.json')
 
 @AvaiblePets
-=======
-def index
+
+
   Pet.all
 end
 def show
 @id = params[:id]
  @dog = Pet.find(@id)
->>>>>>> 19e0931656c1e11b33803458843e0f743726ad03
+
   end
 def create
     @id = params[:id]

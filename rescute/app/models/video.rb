@@ -1,5 +1,7 @@
 class Video < ApplicationRecord
 # https://github.com/youtube/api-samples/blob/master/ruby/search.rb
+attr_accessor :videoId
+
 DEVELOPER_KEY = ENV['DEVELOPER_KEY']
 YOUTUBE_API_SERVICE_NAME = 'youtube'
 YOUTUBE_API_VERSION = 'v3'
