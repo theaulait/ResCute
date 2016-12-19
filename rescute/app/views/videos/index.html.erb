@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Videos</title>
+</head>
+<body>
+
+
+	<div id="player"></div>
+	<div class="container">
+		<%= form_for :video, method: "get", url: {action: "video.main"} %>
+		<%= label_tag(:q, "Search for:") %>
+  		<%= text_field_tag(:q) %>
+
+ 		<%= submit_tag("Search") %>
+ 	</form>
+	</div>
+
+
+<%= @video.description %>
+
+
+</body>
+</html>
