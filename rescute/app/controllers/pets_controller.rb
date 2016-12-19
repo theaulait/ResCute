@@ -1,5 +1,10 @@
 class PetsController < ApplicationController
 
+def show
+@id = params[:id]
+@dog = Pet.find(@id)
+end
+
 def create
     @id = params[:id]
     puts "im hreeeeeeeeeeeeeeee"

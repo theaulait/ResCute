@@ -1,7 +1,7 @@
 class StoresController < ApplicationController
     def initialize
     # response = HTTParty.get('apidata.json')
-    @petsStores = JSON.parse(File.read('/Users/student_02/Desktop/GA_Assign/project3/ResCute/rescute/app/controllers/apidata.json') do |f|
+    @petsStores = JSON.parse(File.read('/Users/student_05/Desktop/ResCute/rescute/app/controllers/apidata.json') do |f|
       f.each_line do |line|
         line
       end
@@ -11,7 +11,7 @@ class StoresController < ApplicationController
   end
 
   def index
-    @stores = Store.limit(20)
+    @stores = Store.limit(10)
   end
   def show
     @id = params[:id]
@@ -33,7 +33,6 @@ class StoresController < ApplicationController
   redirect_to "/stores"
   end
 end
-
 
 
 
