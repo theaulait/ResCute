@@ -11,17 +11,16 @@
 
 <div id="player"></div>
 
-<!-- <div class="container">
+<div class="container">
 <%= @video.description %>
 <%= @video.thumbnail_url%>
 
-	<form action='/videos' method='youtube.search.list'>
-	<h2>Pet Care Videos:</h2>
-	<label>Search</label><br>
-		<input name='<%@url%>'><br>
-
-	</form>
-</div> -->
+<%= form_for "/videos", method: "get" do  %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+</div>
 
 
 </body>

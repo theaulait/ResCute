@@ -37,3 +37,35 @@ function stopVideo() {
   player.stopVideo();
 }
 
+
+
+// getting video search in JS
+// app.post('/search', function(req, res){
+//   var API = process.env.DEVELOPER_KEY
+//   var search = req.body.search; // user's input
+//   var narrow = encodeURIComponent('pets'); // narrow search
+//   fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&q='+narrow+'%20'+search+'&key='+API)
+//   .then(function(response){
+//     return response.json();
+//   })
+//   .then(function(body){
+
+//     var data = {
+//       items : []
+//     };
+//     body.items.map(function(video){
+//       // getting relavent data from API response
+//       data.items.push({
+//         title: video.snippet.title,
+//         description : video.snippet.description,
+//         img : video.snippet.thumbnails.default.url,
+//         channel : video.snippet.channelTitle,
+//         videoid : video.id.videoId,
+//         playlistid : video.id.playlistId
+//       });
+//     });
+//     // rerendering watch.html with data
+//     res.render('watch', data);
+//   });
+// });
+
