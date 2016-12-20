@@ -8,6 +8,7 @@ class StoresController < ApplicationController
     @dog = Store.find(@id)
   end
 
+
   # def create
   #   puts "in create"
   #   pet = Store.find(params[:id])
