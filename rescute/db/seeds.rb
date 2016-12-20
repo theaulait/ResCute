@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-  @petsStores = JSON.parse(File.read('/Users/student_05/Desktop/ResCute/rescute/app/controllers/apidata.json') do |f|
+
+   @petsStores = JSON.parse(File.read('/Users/MyRiceBowl/Desktop/Code Bridge/General Assembly/wdi/project3/rescute/app/controllers/apidata.json') do |f|
       f.each_line do |line|
         line
       end
