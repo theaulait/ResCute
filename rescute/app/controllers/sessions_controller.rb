@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:session][:username])
       if @user && @user.authenticate(params[:session][:password])
         log_in @user
-        redirect_to @user
+        redirect_to '/stores'
       else
       # The error message that will be display if the combination is not correct
       flash.now[:danger] = 'Sorry, the user/password combination is not valid'
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out
-    redirect_to to_root
+    redirect_to root_url
   end
 
 end
