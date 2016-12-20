@@ -23,4 +23,8 @@ def create
 redirect_to "/pets/#{current['id']}"
 end
 
+def delete
+  # get dog id from params (sent by delete form)
+  # delete dog where id = id (from params)
+
 end

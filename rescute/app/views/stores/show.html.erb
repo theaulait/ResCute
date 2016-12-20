@@ -7,17 +7,14 @@
   <link rel="stylesheet" href="">
 </head>
 <body>
-  <%= @dog["status"]%><br>
-  <%= @dog["id"]%>
+<%= @dog["status"]%><br>
+<%= @dog["id"]%>
 <%= @dog["name"]%><br>
 <img src="<%= @dog["image"]%>"><br>
 <% if logged_in? %>
         Hi! <%= @current_user.first_name %>
-
-
 <%= form_for :pets, method: "post", url: {action: "create", :controller=>"pets", id: {:it => @dog["id"], :it2 => @current_user}} do |f|%>
-
-<%=f.submit "adot"%>
+<%=f.submit "adopt"%>
 <%end%>
 <%end%>
 <br>
