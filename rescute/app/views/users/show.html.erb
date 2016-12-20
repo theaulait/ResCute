@@ -9,8 +9,13 @@ Hi! <%= @user.first_name%> <br><br>
 <br>
 
 <p>Log out <%= link_to "Log out", logout_path, method: "delete" %></p><br>
+
 <%@user.pets.each do |dog|%>
 <%=dog[:name]%>
 <%= dog[:gender]%>
- <img src="<%=dog.image%>"><br><br>
+<img src="<%=dog.image%>"><br><br>
+<%= link_to 'give up', pet_path(dog),
+            data: {:confirm => 'Are you sure?'}, :method => "delete", url: {action: "destroy", :controller => "pets"} %>
+<br><br>
 <%end%>
+
