@@ -28,3 +28,17 @@
     locationzip: pet["locationZipcode"].to_i,
     image: pet["pic1"] )
   end
+
+  # Video.create(url: params[:url])
+    # redirect_to "/videos"
+    @vidSearch = params['vidSearch']
+    #Video.create(url: params[:url])
+    @vidData = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=pet%20"+@vidSearch+ "&key=" + ENV["DEVELOPER_KEY"]
+    puts @vidData
+    @jsonParse = HTTParty.get(@vidData)
+    @videoId = @jsonParse['items'][0]['id']['videoId']
+    # @video = Yt::Video.new url: @videoId
+    puts @videoID
+@videoID
+
+Video.create(name: "name" , url: @videoId )
