@@ -7,37 +7,22 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 // 3. This function creates an <iframe> (and YouTube player) after the API code downloads.
 
-
- $('#search').click(function(event) {
-  event.preventDefault()
-  var searchVal = $('#vidSearch').val()
-  console.log(searchVal)
-  console.log('something')
-  $.ajax({
-  "url": "/getjs",
-  "method": "GET",
-  data:{searchVal: searchVal}
-}).done(function(data){
- vidId = data
-  console.log(data)
-})})
-
-
 var player;
-var vidId = '<%= @vidSearch%>';
-
+var vidId = 'tFx5wif-gsA';
+var url = $('#mycontainer').data('source')
 
 function onYouTubeIframeAPIReady() {
+
   player = new YT.Player('player', {
     height: '390',
     width: '640',
-    videoId: vidId,
+    videoId: url,
     events: {
       'onReady': onPlayerReady,
       'onStateChange': onPlayerStateChange
     }
   });
-  console.log(vidId)
+
 }
 
 
@@ -58,24 +43,4 @@ if (event.data == YT.PlayerState.PLAYING && !done) {
 function stopVideo() {
   player.stopVideo();
 }
-
-
-// var buton = document.getElementById("vidSearch").val()
-// console.log(buton)
-
-
-
-
-
-
-
-
-
-  // $.ajax({
-  //       url : "/video",
-  //       type : "post",
-  //       data : { search: JSON.stringify(searchVal) }
-  //   });
-// });
-//sending stuff to rails
 

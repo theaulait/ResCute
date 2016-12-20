@@ -27,12 +27,9 @@ class VideosController < ApplicationController
       @vidData = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=pet%20"+ @vidSearch + "&key=" + ENV["DEVELOPER_KEY"]
       @jsonParse = HTTParty.get(@vidData)
       @description = @jsonParse["items"][4]["snippet"]["description"]
-      #byebug
       @videoId = @jsonParse['items'][0]['id']['videoId']
-     # byebug
       #@video = Yt::Video.new url: "#{@videoId}"
       # byebug
-
       puts @videoId
   # @videoID
   # @vidSearch
