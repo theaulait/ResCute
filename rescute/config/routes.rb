@@ -16,4 +16,5 @@ resources :videos
 # root to: "videos#index"
 # end
 post "/index", to: "videos#getter"
+# get "/main", to: "videos#getter"
 end

@@ -8,12 +8,23 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 // 3. This function creates an <iframe> (and YouTube player) after the API code downloads.
 
 
-
+ $('#search').click(function(event) {
+  event.preventDefault()
+  var searchVal = $('#vidSearch').val()
+  console.log(searchVal)
+  console.log('something')
+  $.ajax({
+  "url": "/getjs",
+  "method": "GET",
+  data:{searchVal: searchVal}
+}).done(function(data){
+ vidId = data
+  console.log(data)
+})})
 
 
 var player;
-var vidId;
-
+var vidId = '<%= @vidSearch%>';
 
 
 function onYouTubeIframeAPIReady() {
@@ -26,6 +37,7 @@ function onYouTubeIframeAPIReady() {
       'onStateChange': onPlayerStateChange
     }
   });
+  console.log(vidId)
 }
 
 
@@ -54,18 +66,7 @@ function stopVideo() {
 
 
 
-//  $('#search').click(function(event) {
-//   event.preventDefault()
-//   var searchVal = $('#vidSearch').val()
-//   console.log(searchVal)
-//   $.ajax({
-//   "url": "/getjs",
-//   "method": "GET",
-//   data:{searchVal: searchVal}
-// }).done(function(data){
-//  vidId = data
-//   console.log(data)
-// })
+
 
 
 
