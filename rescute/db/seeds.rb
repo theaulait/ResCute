@@ -6,7 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
    @petsStores = JSON.parse(File.read('/Users/student_02/Desktop/GA_Assign/project3/ResCute/rescute/app/controllers/apidata.json') do |f|
+
       f.each_line do |line|
         line
       end
@@ -14,7 +16,8 @@
     puts "in initialize"
       @AvaiblePets = @petsStores["pets"]["pet"]
 
-       puts "in create"
+    puts "in create"
+
     @AvaiblePets.each do |pet|
     Store.create(status: "Available",
     name: pet["name"],

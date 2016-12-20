@@ -1,4 +1,5 @@
 class StoresController < ApplicationController
+
   def index
     @stores = Store.limit(20)
   end
@@ -20,6 +21,7 @@ class StoresController < ApplicationController
   #   image: pet["pic1"] )
   # redirect_to "/stores/#{pet['id']}"
   # end
+
 end
 
 

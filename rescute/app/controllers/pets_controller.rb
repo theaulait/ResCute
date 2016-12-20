@@ -1,11 +1,10 @@
 class PetsController < ApplicationController
-def index
-  Pet.all
-end
+
 def show
 @id = params[:id]
- @dog = Pet.find(@id)
-  end
+@dog = Pet.find(@id)
+end
+
 def create
     @id = params[:id]
     puts "im hreeeeeeeeeeeeeeee"
