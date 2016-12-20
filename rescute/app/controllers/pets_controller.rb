@@ -11,12 +11,12 @@ def create
     pet = Store.find(@id)
     current =  Pet.create(
     name: pet["name"],
-    gender: pet["sex"],
-    organisationid: pet["orgID"].to_i,
+    gender: pet["gender"],
+    organisationid: pet["organisationid"].to_i,
     age: rand(1..3),
-    breed: pet["primaryBreed"],
-    locationzip: pet["locationZipcode"].to_i,
-    image: pet["pic1"],
+    breed: pet["breed"],
+    locationzip: pet["locationzip"].to_i,
+    image: pet["image"],
     user_id: 1 )
 redirect_to "/pets/#{current['id']}"
 end
