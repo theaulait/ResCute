@@ -1,5 +1,11 @@
 class PetsController < ApplicationController
 
+def index
+  if logged_in?
+    @user_dogs = User.find(@current_user)
+  end
+end
+
 def show
 @id = params[:id]
 @dog = Pet.find(@id)
@@ -22,6 +28,7 @@ def create
 
 redirect_to "/pets/#{current['id']}"
 end
+
 
 def destroy
     # @user = User.find(params[:id])
