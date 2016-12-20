@@ -7,6 +7,14 @@
   <link rel="stylesheet" href="">
 </head>
 <body>
+
+<%= form_tag(stores_path, method: :get) do %>
+   <%= text_field_tag :term, params[:term] %>
+   <%= submit_tag 'Search', name: nil %>
+<% end %>
+
+
+
   <%@stores.each do |store|%>
 <%= store["status"]%><br>
 <%= store["name"]%><br>
@@ -15,5 +23,9 @@
 <br>
 <br>
 <%end%>
+
+
+<%= will_paginate @stores %>
+
 </body>
 </html>

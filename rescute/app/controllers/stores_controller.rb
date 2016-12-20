@@ -11,7 +11,7 @@ class StoresController < ApplicationController
   end
 
   def index
-    @stores = Store.limit(20)
+      @stores = Store.search(params[:term], params[:page])
   end
   def show
     @id = params[:id]
