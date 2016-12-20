@@ -11,14 +11,12 @@
 <%= @dog["id"]%>
 <%= @dog["name"]%><br>
 <img src="<%= @dog["image"]%>"><br>
-
 <%if logged_in?%>
 <%= @current_user.first_name%>
 <%= form_for :pets, method: "post", url: {action: "create", :controller=>"pets", id: {:it => @dog["id"], :it2 => @current_user}} do |f|%>
 <%=f.submit "Adopt", :id => "heartbutton", "data-toggle" => "modal","data-target" => "#myModal" ,:class => "btn btn-primary btn-lg", :src => "https://s3.amazonaws.com/piktochartv2-dev/v2/uploads/3db760e7-d87f-4ca8-9298-1f805e6341a3/80ade3dc5ed8407dbafed25c4de4ee3ed026908a_original.png"%>
 <%end%>
 <%end%>
-
 <%if !logged_in?%>
 <button type="button" id = "heartbutton" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"><img id ="heart"  src="https://s3.amazonaws.com/piktochartv2-dev/v2/uploads/3db760e7-d87f-4ca8-9298-1f805e6341a3/80ade3dc5ed8407dbafed25c4de4ee3ed026908a_original.png"></button>
 <%end%>
