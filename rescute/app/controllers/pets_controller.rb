@@ -23,10 +23,18 @@ def create
 redirect_to "/pets/#{current['id']}"
 end
 
-def delete
-  # get dog id from params (sent by delete form)
-  # delete dog where id = id (from params)
 
-end
+def destroy
+    # @user = User.find(params[:id])
+    @dog = Pet.find(params[:id])
+    user_dog_id = @dog.user_id
+    @user = User.find(user_dog_id)
+    @dog.destroy
+
+    respond_to do |format|
+      format.html { redirect_to user_path(@user) }
+      format.xml  { head :ok }
+    end
+  end
 
 end
