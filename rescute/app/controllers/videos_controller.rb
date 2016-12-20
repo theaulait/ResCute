@@ -1,6 +1,4 @@
-class VideosController < ApplicationController
-  skip_before_action :verify_authenticity_token
-  attr_accessor :vidSearch
+
 
     #videos rendered here
   def index
@@ -21,4 +19,3 @@ class VideosController < ApplicationController
     render :template => "videos/index"
   end
 end
-
