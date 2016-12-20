@@ -11,11 +11,13 @@
         line
       end
     end)
+
     puts "in initialize"
       @AvaiblePets = @petsStores["pets"]["pet"]
 
 
     puts "in create"
+
     @AvaiblePets.each do |pet|
     Store.create(status: "Available",
     name: pet["name"],
