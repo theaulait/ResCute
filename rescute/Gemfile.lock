@@ -50,12 +50,15 @@ GEM
     autoprefixer-rails (6.5.4)
       execjs
     bcrypt (3.1.11)
+<<<<<<< HEAD
     bcrypt-ruby (3.1.5)
       bcrypt (>= 3.1.3)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
+=======
+>>>>>>> 965230140ff5f53ba0d1b189dfb5068fc534321f
     bootstrap-sass (3.3.0.1)
       sass (~> 3.2)
     builder (3.2.2)
@@ -222,8 +225,12 @@ PLATFORMS
 DEPENDENCIES
   activerecord-session_store
   autoprefixer-rails
+<<<<<<< HEAD
   bcrypt-ruby
   better_errors
+=======
+  bcrypt
+>>>>>>> 965230140ff5f53ba0d1b189dfb5068fc534321f
   bootstrap-sass (~> 3.3.0.1)
   byebug
   coffee-rails (~> 4.2)
@@ -248,4 +255,4 @@ DEPENDENCIES
   yt (~> 0.13.7)
 
 BUNDLED WITH
-   1.13.5
+   1.13.6
