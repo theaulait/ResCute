@@ -28,3 +28,5 @@ def delete
   # delete dog where id = id (from params)
 
 end
+
+end

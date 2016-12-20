@@ -1,7 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
-
+<center><h1>Sign up</h1></center>
+<br>
+<center>
 <div class="row">
+<br>
   <div class="col-md-6 col-md-offset-3">
     <%= form_for @user, method: 'post', url: {action: 'create'} do |f| %>
       <%= render 'shared/error_messages' %>
@@ -17,10 +30,20 @@
       <%= f.email_field :email %> <br>
       <%= f.label :password, "Password: minimum of 7 characters" %> <br>
       <%= f.password_field :password %> <br>
-      <%= f.label :password_confirmation, "confirm password" %> <br>
+      <%= f.label :password_confirmation, "Confirm Password" %> <br>
       <%= f.password_field :password_confirmation %> <br><br>
       <%= f.submit "Create Account", class: "btn btn-primary" %>
       <p>Already have an account? <%= link_to "Log In", login_path %></p>
     <% end %>
   </div>
 </div>
+</center>
+<style type="text/css" media="screen">
+.row{
+  background-color: lightgrey;
+  width: 400px;
+}
+</style>
+
+</body>
+</html>

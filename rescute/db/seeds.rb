@@ -13,6 +13,7 @@
         line
       end
     end)
+
     puts "in initialize"
       @AvaiblePets = @petsStores["pets"]["pet"]
 
