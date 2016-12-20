@@ -1,7 +1,10 @@
 class PetsController < ApplicationController
 
 def index
-@pets = Pet.all
+  if logged_in?
+    @user_dogs = User.find(@current_user)
+  end
+
 end
 
 def show

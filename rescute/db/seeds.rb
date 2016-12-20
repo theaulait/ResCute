@@ -7,8 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+<<<<<<< HEAD
    @petsStores = JSON.parse(File.read('/Users/student_02/Desktop/GA_Assign/project3/ResCute/rescute/app/controllers/apidata.json') do |f|
 
+=======
+   @petsStores = JSON.parse(File.read('/Users/MyRiceBowl/Desktop/Code Bridge/General Assembly/wdi/project3/rescute/app/controllers/apidata.json') do |f|
+>>>>>>> b28383ce58c47932829a31307e6e82287f771178
       f.each_line do |line|
         line
       end
@@ -30,3 +34,19 @@
     image: pet["pic1"] )
   end
 
+<<<<<<< HEAD
+=======
+  # Video.create(url: params[:url])
+    # redirect_to "/videos"
+    @vidSearch = params['vidSearch']
+    #Video.create(url: params[:url])
+    @vidData = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=pet%20"+@vidSearch+ "&key=" + ENV["DEVELOPER_KEY"]
+    puts @vidData
+    @jsonParse = HTTParty.get(@vidData)
+    @videoId = @jsonParse['items'][0]['id']['videoId']
+    # @video = Yt::Video.new url: @videoId
+    puts @videoID
+@videoID
+
+Video.create(name: "name" , url: @videoId )
+>>>>>>> b28383ce58c47932829a31307e6e82287f771178
