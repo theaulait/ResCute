@@ -10,9 +10,10 @@ root to: "stores#index"
 resources :stores, only: [:index, :show, :create]
 resources :pets, only: [:index, :show, :create]
 resources :users
-resources :videos do
-    post :vidSearch, :on => :collection
-root to: "videos#index"
-end
-get "/getjs", to: "videos#getter"
+resources :videos
+# resources :videos do
+#     post :vidSearch, :on => :collection
+# root to: "videos#index"
+# end
+post "/index", to: "videos#getter"
 end

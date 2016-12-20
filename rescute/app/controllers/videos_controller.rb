@@ -1,4 +1,5 @@
 class VideosController < ApplicationController
+  skip_before_action :verify_authenticity_token
   attr_accessor :vidSearch
   # def initialize
   #   @vidSearchTerm = vidSearch
@@ -17,24 +18,27 @@ class VideosController < ApplicationController
 end
 
 def getter
-
-
+  puts 'asdfkjas;d'
 
  # Video.create(url: params[:url])
  #    redirect_to "/videos"
-    @vidSearch = params['vidSearch']
-    Video.create(url: params[:url])
-    @vidData = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=pet%20"+@vidSearch+ "&key=" + ENV["DEVELOPER_KEY"]
+    # @vidSearch = params[:vidSearch]
+    # @stuff = JSON.parse(@vidSearch)
+    # puts @stuff[:search]
+    @vidSearch = params[:vidSearch]
+    puts @vidSearch[:vidSearch]
+    # @vidSearch = params['vidSearch']
+    # Video.create(url: params[:url])
+    @vidData = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=pet%20"+ @vidSearch + "&key=" + ENV["DEVELOPER_KEY"]
+      byebug
     puts @vidData
     @jsonParse = HTTParty.get(@vidData)
     @videoId = @jsonParse['items'][0]['id']['videoId']
     @video = Yt::Video.new url: @videoId
-    puts @videoID
-@videoID
-
-
-@vidSearch
-@something = {vidUrl: @videoID}
+    puts @videoId
+# @videoID
+# @vidSearch
+@something = {vidUrl: @videoId}
 render json: @something
 end
 
