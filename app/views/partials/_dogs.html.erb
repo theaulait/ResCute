@@ -1,5 +1,0 @@
- <% if logged_in? %>
- <%= form_for :pets, method: "get", url: {action: "index", :controller=>"pets",  id: @current_user }  do |f|%>
-<%=f.submit "user pets"%>
-<%end%>
- <%end%>
