@@ -1,5 +1,11 @@
 class PetsController < ApplicationController
 
+def index
+  if logged_in?
+    @user_dogs = User.find(@current_user)
+  end
+end
+
 def show
 @id = params[:id]
 @dog = Pet.find(@id)
