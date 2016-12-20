@@ -12,5 +12,6 @@ resources :pets, only: [:index, :show, :create, :destroy]
 resources :videos
   post "/index", to: "videos#getter"
 resources :users
+get '/test', to: 'pets#test'
 
 end
