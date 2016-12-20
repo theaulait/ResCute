@@ -1,5 +1,9 @@
 class PetsController < ApplicationController
 
+def index
+@pets = Pet.all
+end
+
 def show
 @id = params[:id]
 @dog = Pet.find(@id)

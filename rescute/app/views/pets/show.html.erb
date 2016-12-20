@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="">
 </head>
 <body>
-  <%= @dog.name%>
-  <%= @dog.gender%>
+  <%= @dog.name%><br>
+  <%= @dog.gender%><br>
+
+  <%= link_to "#{@dog.user['first_name']}", @dog.user%>
 </body>
 </html>
