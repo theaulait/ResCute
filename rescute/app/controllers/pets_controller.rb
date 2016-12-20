@@ -6,6 +6,7 @@ def show
 end
 
 def create
+
     @id = params[:id][:it]
     @user1 = params[:id][:it2]
     puts "im hreeeeeeeeeeeeeeee"

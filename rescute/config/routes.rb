@@ -11,5 +11,6 @@ resources :stores, only: [:index, :show, :create]
 resources :pets, only: [:index, :show, :create, :destroy]
 resources :videos
 resources :users
+get '/test', to: 'pets#test'
 
 end
