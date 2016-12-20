@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-
+  <%= csrf_meta_tags %>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Videos</title>
 </head>
@@ -12,24 +12,24 @@
 <div id="player"></div>
 
 <div class="container">
-<%= @video.description %>
-<%= @video.thumbnail_url%>
-	<form class= "vidForm">
-		<input id = "vidSearch" >
+
+	<form class= "vidForm" action= "index" method= "post">
+		<input id = "vidSearch" name="search" >
 		<button id = "search">Search</button>
 	</form>
-<!--
-<%= form_tag @vidSearch_video_path do %>
+<!--  onclick = "returnVal()"> -->
 
-  <%= text_field_tag :vidSearch  %>
-  <%= submit_tag "get vid" %>
-<% end %>
- -->
+
 
 </div>
 
 
 
 </body>
-
+<script>
+	function returnVal(){
+  	var searchVal = document.getElementById("vidSearch").value;
+  	return searchVal
+};
+</script>
 </html>

@@ -1,3 +1,4 @@
+
 // video implementation from Google's API IFRAME Page
 //https://developers.google.com/youtube/iframe_api_reference#Getting_Started
 var tag = document.createElement('script');
@@ -5,16 +6,15 @@ tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 // 3. This function creates an <iframe> (and YouTube player) after the API code downloads.
+
+
+
+
+
 var player;
 var vidId;
 
-$.ajax({
-  "url": "/getjs",
-  "method": "GET"
-}).done(function(data){
- vidId = data
-  console.log(data)
-})
+
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
@@ -48,34 +48,33 @@ function stopVideo() {
 }
 
 
+// var buton = document.getElementById("vidSearch").val()
+// console.log(buton)
 
-// getting video search in JS
-// app.post('/search', function(req, res){
-//   var API = process.env.DEVELOPER_KEY
-//   var search = req.body.search; // user's input
-//   var filt = encodeURIComponent('pets'); // filter search
-//   fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&q='+filt+'%20'+search+'&key='+API)
-//   .then(function(response){
-//     return response.json();
-//   })
-//   .then(function(body){
 
-//     var data = {
-//       items : []
-//     };
-//     body.items.map(function(video){
-//       // getting relavent data from API response
-//       data.items.push({
-//         title: video.snippet.title,
-//         description : video.snippet.description,
-//         img : video.snippet.thumbnails.default.url,
-//         channel : video.snippet.channelTitle,
-//         videoid : video.id.videoId,
-//         playlistid : video.id.playlistId
-//       });
-//     });
-//     // rerendering watch.html with data
-//     res.render('watch', data);
-//   });
+
+
+//  $('#search').click(function(event) {
+//   event.preventDefault()
+//   var searchVal = $('#vidSearch').val()
+//   console.log(searchVal)
+//   $.ajax({
+//   "url": "/getjs",
+//   "method": "GET",
+//   data:{searchVal: searchVal}
+// }).done(function(data){
+//  vidId = data
+//   console.log(data)
+// })
+
+
+
+
+  // $.ajax({
+  //       url : "/video",
+  //       type : "post",
+  //       data : { search: JSON.stringify(searchVal) }
+  //   });
 // });
+//sending stuff to rails
 
