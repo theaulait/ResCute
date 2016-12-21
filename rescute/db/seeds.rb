@@ -1,3 +1,4 @@
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -7,46 +8,29 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-<<<<<<< HEAD
-   @petsStores = JSON.parse(File.read('/Users/student_02/Desktop/GA_Assign/project3/ResCute/rescute/app/controllers/apidata.json') do |f|
 
-=======
-   @petsStores = JSON.parse(File.read('/Users/MyRiceBowl/Desktop/Code Bridge/General Assembly/wdi/project3/rescute/app/controllers/apidata.json') do |f|
->>>>>>> b28383ce58c47932829a31307e6e82287f771178
-      f.each_line do |line|
-        line
-      end
-    end)
-
-    puts "in initialize"
-      @AvaiblePets = @petsStores["pets"]["pet"]
-
-    puts "in create"
-
-    @AvaiblePets.each do |pet|
-    Store.create(status: "Available",
-    name: pet["name"],
-    gender: pet["sex"],
-    organisationid: pet["orgID"].to_i,
-    age: rand(1..3),
-    breed: pet["primaryBreed"],
-    locationzip: pet["locationZipcode"].to_i,
-    image: pet["pic1"] )
+# rails find the json file in db folder, and populate data
+config_path = File.expand_path(File.join(File.dirname(__FILE__), "apidata.json"))
+@petsStores = JSON.parse(File.read(config_path) do |f|
+  f.each_line do |line|
+    line
   end
+end)
+# response = HTTParty.get('https://api.rescuegroups.org/rest/?key=' + ENV['RESCUEGROUPS_KEY'] + '&type=animals&species=Dog&limit=100')
+# render JSON: => response
+  # testing --> puts "in initialize"
+# getting pets from json
+@AvaiblePets = @petsStores["pets"]["pet"]
+  # testing -->puts "in create"
+# putting each pet's data into the database
+@AvaiblePets.each do |pet|
+  Store.create(status: "Available",
+  name: pet["name"],
+  gender: pet["sex"],
+  organisationid: pet["orgID"].to_i,
+  age: rand(1..3),
+  breed: pet["primaryBreed"],
+  locationzip: pet["locationZipcode"].to_i,
+  image: pet["pic1"] )
+end
 
-<<<<<<< HEAD
-=======
-  # Video.create(url: params[:url])
-    # redirect_to "/videos"
-    @vidSearch = params['vidSearch']
-    #Video.create(url: params[:url])
-    @vidData = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=pet%20"+@vidSearch+ "&key=" + ENV["DEVELOPER_KEY"]
-    puts @vidData
-    @jsonParse = HTTParty.get(@vidData)
-    @videoId = @jsonParse['items'][0]['id']['videoId']
-    # @video = Yt::Video.new url: @videoId
-    puts @videoID
-@videoID
-
-Video.create(name: "name" , url: @videoId )
->>>>>>> b28383ce58c47932829a31307e6e82287f771178
