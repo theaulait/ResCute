@@ -9,8 +9,10 @@ As a prospective pet owner, I want to be able to see a pet and get some informat
 Technologies Used
 ------
 *API's Used
+
 	* **[Rescue Groups](https://rescuegroups.org/services/adoptable-pet-data-api/)
 	* **[YouTube](https://developers.google.com/youtube/v3/)
+
 *[Ruby on Rails](http://rubyonrails.org/)
 	* **[Active Record Session Store](https://github.com/rails/activerecord-session_store)** user session storage
 	* **[HTTParty](https://github.com/jnunemaker/httparty)** to query web services and retrieve API information
@@ -18,8 +20,10 @@ Technologies Used
 	* **[JSON](https://github.com/flori/json)** data parsing from the API request
 	* **[Google API Client](https://github.com/google/google-api-ruby-client)** retrieving API data from youtube
 	* **[Better Errors](https://github.com/charliesome/better_errors)** source inspection and live repl for debugging
+
 *CSS
 	* **[Bootstrap](http://getbootstrap.com/)
+	
 *Javascript
 	* **[jQuery](https://jquery.com/)
 *[Trello](https://trello.com/)
