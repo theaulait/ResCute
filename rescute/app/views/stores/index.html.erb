@@ -18,8 +18,13 @@
 <%@stores.each do |store|%>
 <%= store["status"]%><br>
 <%= store["name"]%><br>
+
+<br>
+<br>
+
 <%= link_to image_tag(store.image), "stores/#{store['id']}"%>
-<br><br>
+<br>
+<br>
 <%end%>
 <!-- Buttons -->
 <% if !logged_in? %>
