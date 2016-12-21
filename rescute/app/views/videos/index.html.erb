@@ -8,17 +8,17 @@
 </head>
 <body>
 
-<div id="player"></div>
-
+<%= render 'partials/nav1'%><br>
+<h1>Watch Pet Care Videos</h1>
 <div class="container">
-
- <form class= "vidForm" action= "index" method= "post">
-        <input id = "vidSearch" name="search" >
-        <button id = "search">Search</button>
-    </form>
-
- <%= @description %>
+  <form class= "vidForm" action= "index" method= "post">
+    <input id = "vidSearch" name="search" >
+    <button id = "search">Search</button>
+  </form>
+  <div id="player"></div>
+  <%= @description %>
 </div>
+
 
 </body>
 <script>
