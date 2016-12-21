@@ -1,0 +1,9 @@
+<%= link_to 'Available Doggies', root_path %><br>
+ <% if !logged_in? %>
+<%= link_to 'login', "/login" %><br>
+<%= link_to 'sign up', "/signup" %>
+<%end%>
+ <% if logged_in? %>
+
+<%= link_to 'User Account', user_path(@current_user) %>
+<%end%>

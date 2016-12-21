@@ -1,0 +1,22 @@
+<% provide(:title, @user.first_name,) %> <br><br><br>
+<%= render 'partials/nav1'%> <br>
+<%= render 'partials/dogs'%><br>
+Hi! <%= @user.first_name%> <br><br>
+<p>What would you like to do?<p>
+<%= @user.email%>
+
+<p>Update Account <%= link_to "Update Account", edit_user_path(current_user)%></p>
+<br>
+<br>
+
+<p>Log out <%= link_to "Log out", logout_path, method: "delete" %></p><br>
+
+<%@user.pets.each do |dog|%>
+<%=dog[:name]%>
+<%= dog[:gender]%>
+<img src="<%=dog.image%>"><br><br>
+<%= link_to 'give up', pet_path(dog),
+            data: {:confirm => 'Are you sure?'}, :method => "delete", url: {action: "destroy", :controller => "pets"} %>
+<br><br>
+<%end%>
+

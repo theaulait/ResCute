@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+<%= @dog["status"]%><br>
+<%= @dog["id"]%>
+<%= @dog["name"]%><br>
+<img src="<%= @dog["image"]%>"><br>
+<%if logged_in?%>
+<%= @current_user.first_name%>
+<%= form_for :pets, method: "post", url: {action: "create", :controller=>"pets", id: {:it => @dog["id"], :it2 => @current_user}} do |f|%>
+<%=f.submit "", :id => "heartbutton", "data-toggle" => "modal","data-target" => "#myModal" ,:class => "btn btn-primary btn-lg", :src => "https://s3.amazonaws.com/piktochartv2-dev/v2/uploads/3db760e7-d87f-4ca8-9298-1f805e6341a3/80ade3dc5ed8407dbafed25c4de4ee3ed026908a_original.png"%>
+<%end%>
+<%end%>
+<%if !logged_in?%>
+<button type="button" id = "heartbutton" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"><img id ="heart"  src="https://s3.amazonaws.com/piktochartv2-dev/v2/uploads/3db760e7-d87f-4ca8-9298-1f805e6341a3/80ade3dc5ed8407dbafed25c4de4ee3ed026908a_original.png"></button>
+<%end%>
+<br><br>
+<!-- Login Modal -->
+<%if (!logged_in?)%>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Rescute</h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'login'%>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<%end%>
+<style type="text/css" media="screen">
+input[type="submit"]{
+  background: url("https://s3.amazonaws.com/piktochartv2-dev/v2/uploads/3db760e7-d87f-4ca8-9298-1f805e6341a3/80ade3dc5ed8407dbafed25c4de4ee3ed026908a_original.png");
+  background-size: cover;
+}
+#heart{
+  height: 100px;
+  width: 100px;
+  margin: -16px 0 0 -23px;
+}
+#heartbutton{
+  height: 100px;
+  width: 100px;
+  border: solid 8px black;
+  border-radius: 100%;
+  background-color: darkred;
+}
+#x{
+  height: 100px;
+  width: 100px;
+  margin: -16px 0 0 -23px;
+}
+#xbutton{
+  height: 100px;
+  width: 100px;
+  border: solid 8px black;
+  border-radius: 100%;
+  background-color: grey;
+}
+</style>
+</body>
+</html>
