@@ -4,7 +4,7 @@
 <h1>Welcome <%= @user.first_name%>!</h1>
 <br><br>
 <div id = "userinfo">
-<p>What would you like to do?<p>
+<h3>What would you like to do?</h3>
 <p>Name: <%= @user.first_name%> <%= @user.last_name%></p>
 <p>Email: <%= @user.email%></p>
 <p>Update Account: <%= link_to "Update Account", edit_user_path(current_user)%></p>
