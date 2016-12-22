@@ -18,14 +18,13 @@
        <%= store["name"]%><br>
       <%end%>
     </div>
-<nav><%= render 'partials/nav1'%></nav>
+<%= render 'partials/nav1'%>
   <%@stores.each do |store|%>
     <div id = "dogimage"><%= link_to image_tag(store.image, :size => "400x400"), "stores/#{store['id']}"%></div>
   <%end%>
 <!-- Buttons -->
 <div id = "buttons">
 <%@stores.each do |store|%>
-
 <div id = "heartbutton"><%= button_tag link_to image_tag('https://s3.amazonaws.com/piktochartv2-dev/v2/uploads/3db760e7-d87f-4ca8-9298-1f805e6341a3/80ade3dc5ed8407dbafed25c4de4ee3ed026908a_original.png', :id => "heartbutton"), "stores/#{store['id']}" %></div>
 <%end%>
 <button type="button" id = "xbutton"><%= will_paginate @stores, :page_links => false, :previous => false, :previous_label => '', :next_label => image_tag('https://tindertrash.files.wordpress.com/2015/05/cropped-tinder-nope1.png') %></button>
@@ -34,16 +33,6 @@
 <style type="text/css" media="screen">
 body{
   background-color: rgb(225, 100, 67);
-}
-nav{
-  list-style-type: none;
-  text-align: center;
-}
-nav ul{
-  display: inline;
-}
-nav li{
-  display: inline-block;
 }
 #dogimage{
   text-align: center;
@@ -59,8 +48,9 @@ nav li{
   background-color: darkred;
 }
 #heartbutton img{
-  height: 40px;
-  width:  40px;
+  height: 80px;
+  width:  80px;
+  margin:  0 0 0 -5px;
   border-radius: 100%;
 }
 #xbutton{
