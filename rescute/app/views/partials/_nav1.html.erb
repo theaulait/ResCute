@@ -4,6 +4,6 @@
 <%= link_to 'sign up', "/signup" %>
 <%end%>
  <% if logged_in? %>
-
-<%= link_to 'User Account', user_path(@current_user) %>
+<%= link_to "Watch cute video", "/videos#index", url: {action: "index", :controller => "videos"}%><br>
+<%= link_to 'User Account', user_path(@current_user) %><br>
 <%end%>

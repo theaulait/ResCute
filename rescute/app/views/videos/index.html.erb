@@ -8,8 +8,10 @@
 </head>
 <body>
 
-<%= render 'partials/nav1'%><br>
-<h1>Watch Pet Care Videos</h1>
+
+<nav><%= render 'partials/nav1'%> <br>
+        <%= render 'partials/dogs'%><br></nav>
+<div id="player"></div>
 <div class="container">
   <form class= "vidForm" action= "index" method= "post">
     <input id = "vidSearch" name="search" >
