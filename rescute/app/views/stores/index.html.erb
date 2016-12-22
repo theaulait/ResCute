@@ -9,23 +9,19 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div>
-      <% if logged_in? %>
-        Greetings <%= @current_user.first_name %> !<br>
-      <% end %>
-      <%@stores.each do |store|%>
-       <%= store["status"]%><br>
-       <%= store["name"]%><br>
-      <%end%>
-    </div>
-<nav><%= render 'partials/nav1'%></nav>
+    <% if logged_in? %>
+      <h4>Account: <%= @current_user.email %></h4>
+    <% end %>
+
+<%= render 'partials/nav1'%>
   <%@stores.each do |store|%>
+       <h1><%= store["name"]%></h1>
+       <h5><%= store["status"]%></h5>
     <div id = "dogimage"><%= link_to image_tag(store.image, :size => "400x400"), "stores/#{store['id']}"%></div>
   <%end%>
 <!-- Buttons -->
 <div id = "buttons">
 <%@stores.each do |store|%>
-
 <div id = "heartbutton"><%= button_tag link_to image_tag('https://s3.amazonaws.com/piktochartv2-dev/v2/uploads/3db760e7-d87f-4ca8-9298-1f805e6341a3/80ade3dc5ed8407dbafed25c4de4ee3ed026908a_original.png', :id => "heartbutton"), "stores/#{store['id']}" %></div>
 
 <%end%>
@@ -36,15 +32,11 @@
 body{
   background-color: rgb(225, 100, 67);
 }
-nav{
-  list-style-type: none;
+h1, h5{
   text-align: center;
 }
-nav ul{
-  display: inline;
-}
-nav li{
-  display: inline-block;
+h4{
+  float: right;
 }
 #dogimage{
   text-align: center;
@@ -60,8 +52,9 @@ nav li{
   background-color: darkred;
 }
 #heartbutton img{
-  height: 40px;
-  width:  40px;
+  height: 80px;
+  width:  80px;
+  margin:  0 0 0 -4px;
   border-radius: 100%;
 }
 #xbutton{
