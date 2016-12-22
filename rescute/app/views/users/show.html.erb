@@ -6,10 +6,9 @@ Hi! <%= @user.first_name%> <br><br>
 <%= @user.email%>
 
 <p>Update Account <%= link_to "Update Account", edit_user_path(current_user)%></p>
-<br>
-<br>
+<br><br>
 
-<p>Log out <%= link_to "Log out", logout_path, method: "delete" %></p><br>
+<p><%= link_to "Log out", logout_path, method: "delete" %></p><br>
 
 <%@user.pets.each do |dog|%>
 <%=dog[:name]%>
