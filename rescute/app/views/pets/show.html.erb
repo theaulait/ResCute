@@ -7,11 +7,28 @@
   <link rel="stylesheet" href="">
 </head>
 <body>
-
+  
+<nav>
 <%= render 'partials/nav1'%> <br>
 <%= render 'partials/dogs'%><br>
+</nav>
   <%= @dog.name%>
   <%= @dog.gender%>
 
 </body>
 </html>
+<style>
+body{
+  background-color: rgb(225, 100, 67);
+}
+nav{
+  list-style-type: none;
+  text-align: center;
+}
+nav ul{
+  display: inline;
+}
+nav li{
+  display: inline-block;
+}
+</style>

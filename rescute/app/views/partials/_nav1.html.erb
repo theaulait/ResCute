@@ -1,9 +1,17 @@
-<%= link_to 'Available Doggies', root_path %><br>
- <% if !logged_in? %>
-<%= link_to 'login', "/login" %><br>
-<%= link_to 'sign up', "/signup" %>
+<ul>
+<li><%= link_to 'Available Doggies', root_path %></li>
+</ul>
+<% if !logged_in? %>
+<ul>
+<li><%= link_to 'login', "/login" %></li>
+<li><%= link_to 'sign up', "/signup" %></li>
+</ul>
 <%end%>
- <% if logged_in? %>
-<%= link_to "Watch cute video", "/videos#index", url: {action: "index", :controller => "videos"}%><br>
-<%= link_to 'User Account', user_path(@current_user) %><br>
+
+<% if logged_in? %>
+<ul>
+<li><%= link_to 'User Account', user_path(@current_user) %></li>
+<li><%= link_to 'Videos', "/videos"%></li>
+</ul>
+
 <%end%>
