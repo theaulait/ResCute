@@ -26,6 +26,7 @@
 <div id = "buttons">
 <%@stores.each do |store|%>
 <div id = "heartbutton"><%= button_tag link_to image_tag('https://s3.amazonaws.com/piktochartv2-dev/v2/uploads/3db760e7-d87f-4ca8-9298-1f805e6341a3/80ade3dc5ed8407dbafed25c4de4ee3ed026908a_original.png', :id => "heartbutton"), "stores/#{store['id']}" %></div>
+
 <%end%>
 <button type="button" id = "xbutton"><%= will_paginate @stores, :page_links => false, :previous => false, :previous_label => '', :next_label => image_tag('https://tindertrash.files.wordpress.com/2015/05/cropped-tinder-nope1.png') %></button>
 </div>

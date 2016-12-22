@@ -10,7 +10,9 @@
 
   <nav>
     <ul>
-      <li><a href="/pets">Home</a></li>
+    <%= render 'partials/nav1'%> <br>
+    <%= render 'partials/dogs'%><br>
+    <li><a href="/pets">Home</a></li>
     </ul>
   </nav>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="banner"></div>
@@ -37,6 +39,7 @@
   <%@user_dogs.pets.each do |dog| %>
   <%= dog.name %>
   <img src = "<%= dog.image%>">
+  <%= link_to "#{dog.name}'s page", "/pets/#{dog['id']}"%>
   <%end%>
 </body>
 </html>
