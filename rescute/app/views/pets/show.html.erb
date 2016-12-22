@@ -7,13 +7,16 @@
   <link rel="stylesheet" href="">
 </head>
 <body>
-  
-<nav>
+
 <%= render 'partials/nav1'%> <br>
 <%= render 'partials/dogs'%><br>
-</nav>
-  <%= @dog.name%>
-  <%= @dog.gender%>
+
+<div id = "container">
+<div id = "data">
+<h1> You've just adopted <%= @dog.name%>! </h1>
+</div>
+<img src = "<%= @dog.image%>">
+</div>
 
 </body>
 </html>
@@ -21,14 +24,8 @@
 body{
   background-color: rgb(225, 100, 67);
 }
-nav{
-  list-style-type: none;
+#container{
   text-align: center;
-}
-nav ul{
-  display: inline;
-}
-nav li{
-  display: inline-block;
+  padding-top: 50px;
 }
 </style>

@@ -9,17 +9,14 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div>
-      <% if logged_in? %>
-        Greetings <%= @current_user.first_name %> !<br>
-      <% end %>
-      <%@stores.each do |store|%>
-       <%= store["status"]%><br>
-       <%= store["name"]%><br>
-      <%end%>
-    </div>
+    <% if logged_in? %>
+      <h4>Account: <%= @current_user.email %></h4>
+    <% end %>
+
 <%= render 'partials/nav1'%>
   <%@stores.each do |store|%>
+       <h1><%= store["name"]%></h1>
+       <h5><%= store["status"]%></h5>
     <div id = "dogimage"><%= link_to image_tag(store.image, :size => "400x400"), "stores/#{store['id']}"%></div>
   <%end%>
 <!-- Buttons -->
@@ -34,6 +31,12 @@
 <style type="text/css" media="screen">
 body{
   background-color: rgb(225, 100, 67);
+}
+h1, h5{
+  text-align: center;
+}
+h4{
+  float: right;
 }
 #dogimage{
   text-align: center;
@@ -51,7 +54,7 @@ body{
 #heartbutton img{
   height: 80px;
   width:  80px;
-  margin:  0 0 0 -5px;
+  margin:  0 0 0 -4px;
   border-radius: 100%;
 }
 #xbutton{
